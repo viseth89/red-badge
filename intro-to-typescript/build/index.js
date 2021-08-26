@@ -8,11 +8,12 @@ var fname = "Justin";
 var testing;
 testing = 5;
 console.log(add(6, testing));
-var Student;
 var student = {
     fname: 'Andy',
     lname: 'Anderson',
-    grade: 12
+    grade: 12,
+    favColor: "Red",
+    what: 'huh'
 };
 function toString(student) {
     return JSON.stringify(student);
@@ -21,4 +22,5 @@ function add(x, y) {
     var result = x + y;
     return result;
 }
+console.log(toString(student));
 console.log(count);

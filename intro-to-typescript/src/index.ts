@@ -13,22 +13,23 @@ testing = 5
 
 console.log(add(6, testing))
 
-let Student: {
+type Student =  {
     fname: string
     lname: string
     grade: number
 }
 
-let student = {
+let student:Student = {
     fname:'Andy',
     lname:'Anderson',
-    grade:12
+    grade:12,
+    favColor: "Red",
+    what: 'huh'
 }
 
 
-function toString(student:{
-    fname:string
-}){
+function toString(student: Student
+    ){
     return JSON.stringify(student)
 }
 
@@ -37,5 +38,5 @@ function add(x: number, y: number): number {
     return result
 }
 
-
+console.log(toString(student))
 console.log(count)
