@@ -25,8 +25,6 @@ let student = {
     fname:'ROTER',
     lname:'Anderson',
     grade:12,
-    favColor: "Red",
-    what: 'huh'
 }
 
 
@@ -44,7 +42,7 @@ function add(x: number, y: number): number {
 }
 
 console.log(toString(student))
-console.log(count)
+// console.log(count)
 
 
 // ANY & VOID
@@ -57,13 +55,20 @@ type ServerResponse = Student | Error
 
 function sendMessage(): [status: Status, response: ServerResponse]
 {
-    return["success", {
-        fname:"first",
-        lname:"last",
-        grade: 12
-    }]
+    let tmp = Math.round((Math.random() ))
+    console.log(tmp)
+    if (tmp == 1) {
+        return["success", {
+            fname:"viseth",
+            lname:"sen",
+            grade: 12
+        }]
+    } else {
+        return["failure", "Something went wrong"]
+    }
 }
 
-const [statusResult, data] = sendMessage()
-if (statusResult == 'success')
-    console.log(data)
+for (let i=0; i<10; i++){
+    let [statusResult, data] = sendMessage()
+        console.log(data)
+}

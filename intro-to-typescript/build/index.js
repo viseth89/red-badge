@@ -13,8 +13,6 @@ var student = {
     fname: 'ROTER',
     lname: 'Anderson',
     grade: 12,
-    favColor: "Red",
-    what: 'huh'
 };
 function toString(student) {
     return JSON.stringify(student);
@@ -27,15 +25,22 @@ function add(x, y) {
     return result;
 }
 console.log(toString(student));
-console.log(count);
 // Tuple
 function sendMessage() {
-    return ["success", {
-            fname: "first",
-            lname: "last",
-            grade: 12
-        }];
+    var tmp = Math.round((Math.random()));
+    console.log(tmp);
+    if (tmp == 1) {
+        return ["success", {
+                fname: "viseth",
+                lname: "sen",
+                grade: 12
+            }];
+    }
+    else {
+        return ["failure", "Something went wrong"];
+    }
 }
-var _a = sendMessage(), statusResult = _a[0], data = _a[1];
-if (statusResult == 'success')
+for (var i = 0; i < 10; i++) {
+    var _a = sendMessage(), statusResult = _a[0], data = _a[1];
     console.log(data);
+}
