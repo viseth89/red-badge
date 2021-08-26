@@ -34,15 +34,16 @@ if (typeof z == "string"){
     z.toUpperCase()
 }
 // [1,2,3, "Hello"] // Array<number> or number
-let myObj: Array<any> | object
+let myObj: any[] | object
 
 myObj = [1,2,3]
+myObj = {fname: "Viseth"}
 if(myObj instanceof Array) {
-    myObj.map(() => {})
+    console.log(myObj)
 } else {
-    let keys = Object.keys(myObj)
-    console.log(keys)
+    let values = Object.values(myObj)
+    console.log(values)
 }
 
-console.log(typeof myObj)
+// console.log(typeof myObj)
 // interface

@@ -13,20 +13,21 @@ console.log(Color.blue);
 function addTwoThings(x, y) {
     return x + y;
 }
-var z = addTwoThings("2", "5");
+let z = addTwoThings("2", "5");
 // Guard .. Type Guards
 if (typeof z == "string") {
     z.toUpperCase();
 }
 // [1,2,3, "Hello"] // Array<number> or number
-var myObj;
+let myObj;
 myObj = [1, 2, 3];
+myObj = { fname: "Viseth" };
 if (myObj instanceof Array) {
-    myObj.map(function () { });
+    console.log(myObj);
 }
 else {
-    var keys = Object.keys(myObj);
-    console.log(keys);
+    let values = Object.values(myObj);
+    console.log(values);
 }
-console.log(typeof myObj);
+// console.log(typeof myObj)
 // interface
