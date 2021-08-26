@@ -1,3 +1,5 @@
+import { json } from "sequelize/types";
+
 console.log('Greetings')
 
 let count = 5
@@ -19,8 +21,8 @@ type Student =  {
     grade: number
 }
 
-let student:Student = {
-    fname:'Andy',
+let student = {
+    fname:'ROTER',
     lname:'Anderson',
     grade:12,
     favColor: "Red",
@@ -28,8 +30,11 @@ let student:Student = {
 }
 
 
-function toString(student: Student
-    ){
+function toString(student: Student): string{
+    return JSON.stringify(student)
+}
+
+const toStringArrow = (student: Student): string => {
     return JSON.stringify(student)
 }
 
@@ -40,3 +45,25 @@ function add(x: number, y: number): number {
 
 console.log(toString(student))
 console.log(count)
+
+
+// ANY & VOID
+
+// Union
+type Status = "success" | "failure"
+type ServerResponse = Student | Error
+
+// Tuple
+
+function sendMessage(): [status: Status, response: ServerResponse]
+{
+    return["success", {
+        fname:"first",
+        lname:"last",
+        grade: 12
+    }]
+}
+
+const [statusResult, data] = sendMessage()
+if (statusResult == 'success')
+    console.log(data)
