@@ -27,6 +27,7 @@ let student = {
     grade:12,
 }
 
+let sqr = (x:number): number => x*x
 
 function toString(student: Student): string{
     return JSON.stringify(student)
@@ -49,7 +50,7 @@ console.log(toString(student))
 
 // Union
 type Status = "success" | "failure"
-type ServerResponse = Student | Error
+type ServerResponse = Student | string
 
 // Tuple
 

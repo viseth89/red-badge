@@ -14,6 +14,7 @@ var student = {
     lname: 'Anderson',
     grade: 12,
 };
+var sqr = function (x) { return x * x; };
 function toString(student) {
     return JSON.stringify(student);
 }
