@@ -14,6 +14,11 @@ interface Send {
     send(): message
 }
 
+// getMessage
+
+interface GetMessage{
+    myMessage(): String
+}
 
 class Mail implements Send {
     data
@@ -25,7 +30,7 @@ class Mail implements Send {
         return returnValue
     }
 }
-class Email implements Send {
+class Email implements Send, GetMessage {
     data
     constructor(data: string){
         this.data = data
