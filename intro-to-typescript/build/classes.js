@@ -1,7 +1,8 @@
 "use strict";
 class Mail {
-    constructor(data) {
+    constructor(data, extraData) {
         this.data = data;
+        this.extraData = extraData;
     }
     send() {
         let returnValue = "success";

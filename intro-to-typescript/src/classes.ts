@@ -21,10 +21,9 @@ interface GetMessage{
 }
 
 class Mail implements Send {
-    data
-    constructor(data: string){
-        this.data = data
-    }
+    constructor(
+        public data: string,
+        public extraData: string){}
     send(): message{
         let returnValue: message = "success"
         return returnValue
