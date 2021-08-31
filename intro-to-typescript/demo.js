@@ -17,7 +17,7 @@ class Animal {
 }
 
 class Tiger extends Animal {
-    _password = 42
+    #password = 42
     constructor(name, legs, isDanger){
         super(name,legs)
         this.isDanger = isDanger
@@ -25,17 +25,19 @@ class Tiger extends Animal {
 
     // getters
     get password () {
-        return this._password
+        return this.#password
     }
 
     set password (n){
-        if(typeof n !== "number")
-            this._password = n
+        if(typeof n === "number")
+            this.#password = n
     }
 }
 
 let tiger = new Tiger('bengal', 4, true)
 console.log(tiger)
+tiger.password = "Hello"
+console.log(tiger.password)
 
 // Create an instance of a class
 
