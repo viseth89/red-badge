@@ -31,6 +31,14 @@ Profile.belongsTo(User)
 One to Many
 
 */
+const Order = sequelize.define("Profile", {
+    shipDate: {
+        type: DataTypes.DATE
+    }
+})
+User.hasMany(Order)
+Order.belongsTo(User)
+
 
 /* 
 Many to Many
@@ -38,7 +46,7 @@ Many to Many
 */
 
 ;(async () => {
-    await sequelize.sync();
+    await sequelize.sync({force: true});
 })();
 
 // ((async () =>{
