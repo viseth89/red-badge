@@ -45,6 +45,18 @@ Many to Many
 
 */
 
+const Class = sequelize.define("Class", {
+    className: {
+        type: DataTypes.STRING
+    },
+    startDate: {
+        type: DataTypes.DATE
+    }
+})
+
+User.belongsToMany(Class, { through: "Users_Classes"})
+Class.belongsToMany(User, { through: "Users_Classes"})
+
 ;(async () => {
     await sequelize.sync({force: true});
 })();
