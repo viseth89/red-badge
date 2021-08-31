@@ -3,7 +3,7 @@ interface Point {
     calc(): Number
 }
 interface Point {
-    something(): Number
+    something(): number
 }
 
 // With interfaces you can add them to class with the keyword
@@ -20,7 +20,7 @@ class Mail implements Send {
     constructor(data: string){
         this.data = data
     }
-    send(){
+    send(): message{
         let returnValue: message = "success"
         return returnValue
     }
@@ -30,9 +30,13 @@ class Email implements Send {
     constructor(data: string){
         this.data = data
     }
-    send(){
+    send(): message{
         let returnValue: message = "success"
         return returnValue
+    }
+
+    myMessage(): string {
+        return this.data
     }
 }
 
@@ -40,5 +44,5 @@ class Email implements Send {
 
 const messages = [new Mail("Hello from snail mail"), new Email("Hello can you see me in the inbox")]
 messages.forEach(m => m.send())
-let email = new Mail("Hey!")
-email.send()
+let email = new Email("Hey!")
+console.log(email.myMessage())
