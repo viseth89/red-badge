@@ -8,13 +8,22 @@ class Animal {
         this.legs = legs
     }
     // Methods
+    // Arrow function!!! we lose this
+    // Non fat arrow function
+    speak(){
+        console.log(this.name)
+    } 
+
 }
 
 // Create an instance of a class
 
 let dog = new Animal("lab", 4)
 let cat = new Animal("ragdoll", 4)
-
+cat.legs
+cat.name
+cat.speak()
+console.log('viseth')
 console.log(dog, cat)
 console.log(dog.name, cat.legs)
 console.log(dog.name, cat.name)
