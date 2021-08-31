@@ -21,9 +21,20 @@ interface GetMessage{
 }
 
 class Mail implements Send {
+    private _password: string | undefined
     constructor(
         public data: string,
-        public extraData: string){}
+    ){
+        this._password = undefined
+    }
+
+    set password(x : string | undefined){
+        this._password = x
+    }
+
+    get password(): string | undefined {
+        return this._password
+    }
     send(): message{
         let returnValue: message = "success"
         return returnValue

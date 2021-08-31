@@ -1,8 +1,14 @@
 "use strict";
 class Mail {
-    constructor(data, extraData) {
+    constructor(data) {
         this.data = data;
-        this.extraData = extraData;
+        this._password = undefined;
+    }
+    set password(x) {
+        this._password = x;
+    }
+    get password() {
+        return this._password;
     }
     send() {
         let returnValue = "success";
